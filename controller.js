@@ -10,6 +10,7 @@ function startController() {
   view.registerEventHandlers();
 
   const myGrid = new Grid(5, 3);
+  console.log(myGrid);
   myGrid.printGrid();
 }
 
