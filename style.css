@@ -1,19 +1,21 @@
 body {
-  background-color: cyan;
+  background-color: gray;
 }
 
 #board {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  gap: 0.5em;
+  grid-template-columns: repeat(30, max-content);
+  gap: 0.1rem;
 }
 
+.empty-cell {
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+}
 
-.cell{
-    display: flex;
-    align-items: center;
-    background-color: yellow;
-    color: red;
-    font-size: 10rem;
-    aspect-ratio: 1/1;
+.filled-cell {
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
 }

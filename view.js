@@ -20,15 +20,21 @@ function clickedBoard(event) {
 
 export function createBoardInDom() {
   const board = document.getElementById("board");
-  board.appendChild(createCellElement(0, 0));
-  console.log(board);
+
+  const rows = 5;
+  const cols = 30;
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      board.appendChild(createCellElement(row, col));
+    }
+  }
 }
 
 function createCellElement(row, col) {
   let div = document.createElement("div");
-  div.className = "cell";
+  div.className = "empty-cell";
   div.setAttribute("data-row", row);
   div.setAttribute("data-col", col);
-  div.textContent = "0";
   return div;
 }
