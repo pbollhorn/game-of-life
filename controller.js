@@ -6,13 +6,13 @@ import * as view from "./view.js";
 // import Grid from "https://pbollhorn.github.io/omvendt-gaet-et-tal/grid.js";
 
 function startController() {
-  console.log("hello from startController");
+  console.log("Goodbye from startController");
   view.registerEventHandlers();
 
   // const myGrid = new Grid(5, 3);
   // console.log(myGrid);
   // myGrid.printGrid();
-  console.log("Goodbye from startController");
+
 }
 
 startController();
