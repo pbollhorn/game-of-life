@@ -17,3 +17,18 @@ function clickedBoard(event) {
     console.log("Clicked cell with row: ", row, "col: ", col);
   }
 }
+
+export function createBoardInDom() {
+  const board = document.getElementById("board");
+  board.appendChild(createCellElement(0, 0));
+  console.log(board);
+}
+
+function createCellElement(row, col) {
+  let div = document.createElement("div");
+  div.className = "cell";
+  div.setAttribute("data-row", row);
+  div.setAttribute("data-col", col);
+  div.textContent = "0";
+  return div;
+}

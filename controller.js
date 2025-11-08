@@ -1,5 +1,4 @@
-// import * as view from "./view.js";
-// import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.js";
+import * as view from "./view.js";
 import * as model from "./model.js";
 
 function startController() {
@@ -7,6 +6,9 @@ function startController() {
   // view.registerEventHandlers();
 
   model.startModel();
+
+
+  view.createBoardInDom();
 
   console.log("Goodbye from startController");
 }
