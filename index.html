@@ -9,7 +9,12 @@
   </head>
   <body>
     <h1>Game of Life</h1>
-    <button>Clear all</button><button>Add random cells</button><button>Start simulation</button>
+    <button id="resetButton">Reset</button><button>Add random cells</button>
+    <button>Start simulation</button>
+    <label for="rowsInput">Rows:</label>
+    <input type="number" id="rowsInput" value="10"/>
+    <label for="colsInput">Cols:</label>
+    <input type="number" id="colsInput" value="10"/>
     <p>Generation: 0</p>
     <div id="board">
       <!-- No cells here in HTML, they are created by JavaScript -->

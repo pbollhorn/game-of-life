@@ -4,7 +4,7 @@ body {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(30, max-content);
+  grid-template-columns: repeat(50, max-content);
   gap: 3px;
 }
 

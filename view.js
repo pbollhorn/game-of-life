@@ -6,6 +6,15 @@ export function registerEventHandlers() {
 
   const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
+
+  const resetButton = document.getElementById("resetButton");
+  resetButton.addEventListener("click", clickedResetButton);
+}
+
+function clickedResetButton() {
+  const rows = document.getElementById("rowsInput").value;
+  const cols = document.getElementById("colsInput").value;
+  createBoardInDom(rows,cols)
 }
 
 function clickedBoard(event) {
@@ -18,12 +27,8 @@ function clickedBoard(event) {
   }
 }
 
-export function createBoardInDom() {
+export function createBoardInDom(rows,cols) {
   const board = document.getElementById("board");
-
-  const rows = 5;
-  const cols = 30;
-
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       board.appendChild(createCellElement(row, col));

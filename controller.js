@@ -6,7 +6,7 @@ function startController() {
 
   model.startModel();
 
-  view.createBoardInDom();
+  // view.createBoardInDom();
   view.registerEventHandlers();
 
   console.log("Goodbye from startController");
