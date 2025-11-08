@@ -1,9 +1,4 @@
 // import * as view from "./view.js";
-// import Grid from "https://github.com/pbollhorn/datastruktur-portfolio/blob/main/grid/grid.js";
-// import Grid from "https://raw.githubusercontent.com/pbollhorn/datastruktur-portfolio/main/grid/grid.js";
-// import Grid from "https://cors-anywhere.herokuapp.com/https://github.com/pbollhorn/datastruktur-portfolio/blob/main/grid/grid.js";
-// import Grid from "https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/pbollhorn/datastruktur-portfolio/main/grid/grid.js";
-// import Grid from "https://pbollhorn.github.io/omvendt-gaet-et-tal/grid.js";
 import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.js";
 
 function startController() {
