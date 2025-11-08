@@ -1,0 +1,19 @@
+body {
+  background-color: cyan;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 0.5em;
+}
+
+
+.cell{
+    display: flex;
+    align-items: center;
+    background-color: yellow;
+    color: red;
+    font-size: 10rem;
+    aspect-ratio: 1/1;
+}
