@@ -12,6 +12,7 @@ function startController() {
   const myGrid = new Grid(5, 3);
   console.log(myGrid);
   myGrid.printGrid();
+  console.log("Goodbye startController");
 }
 
 startController();
