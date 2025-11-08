@@ -18,7 +18,6 @@ export function clickedResetButton() {
 
 function clickedBoard(event) {
   const target = event.target;
-
   if (target.classList.contains("cell")) {
     const row = target.dataset.row;
     const col = target.dataset.col;
