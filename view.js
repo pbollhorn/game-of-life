@@ -33,7 +33,7 @@ export function createBoardInDom() {
 
 function createCellElement(row, col) {
   let div = document.createElement("div");
-  div.className = "empty-cell";
+  div.className = "cell empty";
   div.setAttribute("data-row", row);
   div.setAttribute("data-col", col);
   return div;
