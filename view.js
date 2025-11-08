@@ -1,20 +1,19 @@
-export function registerEventHandlers() {
-  // lav event handler på board
-  // så når der bliver trykket på en .cell
-  // kaldes clickedCell()
-  console.log("hello from registerEventHandlers");
+// Registers event handlers and creates board
+export function startView() {
+  const resetButton = document.getElementById("resetButton");
+  resetButton.addEventListener("click", clickedResetButton);
 
   const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
 
-  const resetButton = document.getElementById("resetButton");
-  resetButton.addEventListener("click", clickedResetButton);
+  // Run clickedResetButton which creates the board
+  clickedResetButton();
 }
 
-function clickedResetButton() {
+export function clickedResetButton() {
   const rows = document.getElementById("rowsInput").value;
   const cols = document.getElementById("colsInput").value;
-  createBoardInDom(rows,cols)
+  createBoard(rows, cols);
 }
 
 function clickedBoard(event) {
@@ -27,8 +26,16 @@ function clickedBoard(event) {
   }
 }
 
-export function createBoardInDom(rows,cols) {
+function createBoard(rows, cols) {
   const board = document.getElementById("board");
+
+  // This removes all children from the board
+  board.innerHTML = "";
+
+  // Sets the CSS property which controls number of columns
+  board.style.gridTemplateColumns = `repeat(${cols}, max-content)`;
+
+  // Loop over rows and cols and create child div elements in DOM
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
       board.appendChild(createCellElement(row, col));

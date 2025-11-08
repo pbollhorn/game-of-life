@@ -4,16 +4,15 @@ body {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(50, max-content);
   gap: 3px;
+  /* This is set in JavaScript:
+  grid-template-columns: repeat(NUMBER OF COLS, max-content); */
 }
-
 
 .cell {
   width: 2rem;
   height: 2rem;
 }
-
 
 .empty {
   background-color: white;

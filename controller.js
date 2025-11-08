@@ -4,10 +4,8 @@ import * as model from "./model.js";
 function startController() {
   console.log("Hello from startController");
 
+  view.startView();
   model.startModel();
-
-  // view.createBoardInDom();
-  view.registerEventHandlers();
 
   console.log("Goodbye from startController");
 }
