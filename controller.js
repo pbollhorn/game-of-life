@@ -14,6 +14,20 @@ export function setCell(row, col) {
   view.displayBoard(grid);
 }
 
+export async function startSimulation() {
+  console.log("hello from startSimulation");
+
+  while (true) {
+    console.log("new generation");
+
+    await sleep(1000);
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Startup code which is only run once - on page load
 console.log("Hello from controllers startup code");
 view.registerEventHandlers();

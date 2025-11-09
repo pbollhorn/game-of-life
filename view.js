@@ -4,6 +4,9 @@ export function registerEventHandlers() {
   const resetBoardButton = document.getElementById("resetBoardButton");
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
 
+  const startSimulationButton = document.getElementById("startSimulationButton");
+  startSimulationButton.addEventListener("click", clickedStartSimulationButton);
+
   const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
 }
@@ -27,6 +30,10 @@ export function clickedResetBoardButton() {
   }
 
   controller.resetBoard(rows, cols);
+}
+
+function clickedStartSimulationButton(){
+  controller.startSimulation();
 }
 
 function createCellElement(row, col) {
