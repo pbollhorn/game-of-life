@@ -46,11 +46,7 @@ function clickedBoard(event) {
   }
 }
 
-// View skal have denne metode:
-
-// - `displayBoard()` - opdaterer det visuelle board så det matcher modellen.
-//     - oversæt 0, 1 og 2 i modellen til henholdsvis tomt felt, kryds, og bolle i viewet
-
+// displayBoard() - opdaterer det visuelle board så det matcher modellen.
 // Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
 export function displayBoard(grid) {
   const board = document.getElementById("board");
