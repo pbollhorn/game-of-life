@@ -10,8 +10,8 @@ export function resetBoard(rows, cols) {
 // - `setCell(row, col)` der vil bliv kaldt når der klikkes på en celle. Den skal blot skrive en hardcoded værdi - fx 1 - ind i modellen på det pågældende sted, og dump’e hele modellen til konsollen.
 export function setCell(row, col) {
   model.setCell(row, col);
-  const board = model.getBoard();
-  view.displayBoard(board);
+  const grid = model.getBoard();
+  view.displayBoard(grid);
 }
 
 // Startup code which is only run once - on page load

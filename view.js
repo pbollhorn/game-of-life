@@ -46,20 +46,29 @@ function clickedBoard(event) {
   }
 }
 
-
-
 // View skal have denne metode:
 
 // - `displayBoard()` - opdaterer det visuelle board så det matcher modellen.
 //     - oversæt 0, 1 og 2 i modellen til henholdsvis tomt felt, kryds, og bolle i viewet
 
 // Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
-function displayBoard() {
+export function displayBoard(grid) {
+  const board = document.getElementById("board");
 
+  // Loop over all children of the board (which are the cells)
+  for (const cell of board.children) {
+    const row = parseInt(cell.dataset.row);
+    const col = parseInt(cell.dataset.col);
 
+    // Set CSS classes for cell depending on true/false value in grid
+    switch (grid.get({ row, col })) {
+      case true:
+        cell.className = "cell filled";
+        break;
+      case false:
+        cell.className = "cell empty";
+        break;
+    }
 
-
-
-
-  
+  }
 }
