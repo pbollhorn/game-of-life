@@ -4,8 +4,8 @@ export function registerEventHandlers() {
   const resetBoardButton = document.getElementById("resetBoardButton");
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
 
-  const startSimulationButton = document.getElementById("startSimulationButton");
-  startSimulationButton.addEventListener("click", clickedStartSimulationButton);
+  const runGameButton = document.getElementById("runGameButton");
+  runGameButton.addEventListener("click", clickedRunGameButton);
 
   const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
@@ -32,8 +32,8 @@ export function clickedResetBoardButton() {
   controller.resetBoard(rows, cols);
 }
 
-function clickedStartSimulationButton(){
-  controller.startSimulation();
+function clickedRunGameButton(){
+  controller.runGame();
 }
 
 function createCellElement(row, col) {
@@ -53,8 +53,6 @@ function clickedBoard(event) {
   }
 }
 
-// displayBoard() - opdaterer det visuelle board så det matcher modellen.
-// Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
 export function displayBoard(grid) {
   const board = document.getElementById("board");
 
