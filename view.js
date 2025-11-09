@@ -30,11 +30,11 @@ export function clickedResetBoardButton() {
 }
 
 function createCellElement(row, col) {
-  let div = document.createElement("div");
-  div.className = "cell empty";
-  div.setAttribute("data-row", row);
-  div.setAttribute("data-col", col);
-  return div;
+  let cell = document.createElement("div");
+  cell.className = "cell empty";
+  cell.setAttribute("data-row", row);
+  cell.setAttribute("data-col", col);
+  return cell;
 }
 
 function clickedBoard(event) {
