@@ -10,13 +10,11 @@ function startController() {
   console.log("Goodbye from startController");
 }
 
-
 // Controlleren skal have denne funktion:
 
 // - `setCell(row, col)` der vil bliv kaldt når der klikkes på en celle. Den skal blot skrive en hardcoded værdi - fx 1 - ind i modellen på det pågældende sted, og dump’e hele modellen til konsollen.
-export function setCell(row, col){
-  console.log("From controller: Clicked cell with row: ", row, "col: ", col);
-}    
-
+export function setCell(row, col) {
+  model.setCell(row, col);
+}
 
 startController();

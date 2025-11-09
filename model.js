@@ -10,3 +10,10 @@ export function startModel() {
 
   console.log("Goodbye from startModel");
 }
+
+
+
+
+export function setCell(row, col){
+  console.log("From model: Clicked cell with row: ", row, "col: ", col);
+}  
