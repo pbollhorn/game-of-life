@@ -1,5 +1,6 @@
 import * as view from "./view.js";
 import * as model from "./model.js";
+import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.js";
 
 export function resetBoard(rows, cols) {
   model.resetBoard(rows, cols);
@@ -16,23 +17,29 @@ export function setCell(row, col) {
 
 export async function startSimulation() {
   console.log("hello from startSimulation");
+  const rows = model.rows();
+  const cols = model.cols();
 
   while (true) {
-    console.log("new generation");
+    const newGrid = new Grid(rows, cols);
+    newGrid.fill(false);
+
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const cellLife = model.doesCellLive(row, col); // true or false
+        newGrid.set({ row, col }, cellLife);
+      }
+    }
+
+    model.setGrid(newGrid);
+    view.displayBoard(model.getBoard());
 
     await sleep(1000);
   }
 }
 
-
-function countNeighbors(){
-
-
-  
-}
-
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Startup code which is only run once - on page load
