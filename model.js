@@ -11,9 +11,10 @@ export function startModel() {
   console.log("Goodbye from startModel");
 }
 
+export function resetBoard(rows, cols) {
+  console.log("From model: resetting board with rows", rows, "cols ", cols);
+}
 
-
-
-export function setCell(row, col){
+export function setCell(row, col) {
   console.log("From model: Clicked cell with row: ", row, "col: ", col);
-}  
+}
