@@ -40,8 +40,8 @@ function createCellElement(row, col) {
 function clickedBoard(event) {
   const target = event.target;
   if (target.classList.contains("cell")) {
-    const row = target.dataset.row;
-    const col = target.dataset.col;
+    const row = parseInt(target.dataset.row);
+    const col = parseInt(target.dataset.col);
     controller.setCell(row, col);
   }
 }
@@ -54,4 +54,12 @@ function clickedBoard(event) {
 //     - oversæt 0, 1 og 2 i modellen til henholdsvis tomt felt, kryds, og bolle i viewet
 
 // Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
-function displayBoard() {}
+function displayBoard() {
+
+
+
+
+
+
+  
+}
