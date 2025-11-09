@@ -29,7 +29,7 @@ export async function runGame() {
     model.setBoard(newGrid);
     view.displayBoard(model.getBoard());
 
-    await sleep(1000);
+    await sleep(500);
   }
 }
 
