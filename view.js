@@ -49,3 +49,15 @@ function createCellElement(row, col) {
   div.setAttribute("data-col", col);
   return div;
 }
+
+
+
+// View skal have denne metode:
+
+// - `displayBoard()` - opdaterer det visuelle board så det matcher modellen.
+//     - oversæt 0, 1 og 2 i modellen til henholdsvis tomt felt, kryds, og bolle i viewet
+
+// Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
+function displayBoard(){
+  
+}
