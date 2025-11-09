@@ -44,6 +44,7 @@ function countLiveNeighbours(row, col) {
 export function doesCellLive(row, col) {
   const liveNeighbourCount = countLiveNeighbours(row, col);
   if (liveNeighbourCount < 2) return false;
+  if (liveNeighbourCount == 2) return grid.get({ row, col });
+  if (liveNeighbourCount == 3) return true;
   if (liveNeighbourCount > 3) return false;
-  return true;
 }
