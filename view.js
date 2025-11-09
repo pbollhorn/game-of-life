@@ -1,21 +1,17 @@
 import * as controller from "./controller.js";
 
-// Registers event handlers and creates board
-export function startView() {
+export function registerEventHandlers() {
   const resetBoardButton = document.getElementById("resetBoardButton");
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
 
   const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
-
-  // Run clickedResetBoardButton which creates the board
-  clickedResetBoardButton();
 }
 
 export function clickedResetBoardButton() {
+  const board = document.getElementById("board");
   const rows = document.getElementById("rowsInput").value;
   const cols = document.getElementById("colsInput").value;
-  const board = document.getElementById("board");
 
   // This removes all children from the board
   board.innerHTML = "";
@@ -33,6 +29,14 @@ export function clickedResetBoardButton() {
   controller.resetBoard(rows, cols);
 }
 
+function createCellElement(row, col) {
+  let div = document.createElement("div");
+  div.className = "cell empty";
+  div.setAttribute("data-row", row);
+  div.setAttribute("data-col", col);
+  return div;
+}
+
 function clickedBoard(event) {
   const target = event.target;
   if (target.classList.contains("cell")) {
@@ -42,13 +46,7 @@ function clickedBoard(event) {
   }
 }
 
-function createCellElement(row, col) {
-  let div = document.createElement("div");
-  div.className = "cell empty";
-  div.setAttribute("data-row", row);
-  div.setAttribute("data-col", col);
-  return div;
-}
+
 
 // View skal have denne metode:
 

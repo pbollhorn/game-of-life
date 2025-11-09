@@ -1,15 +1,6 @@
 import * as view from "./view.js";
 import * as model from "./model.js";
 
-function startController() {
-  console.log("Hello from startController");
-
-  view.startView();
-  model.startModel();
-
-  console.log("Goodbye from startController");
-}
-
 export function resetBoard(rows, cols) {
   model.resetBoard(rows, cols);
 }
@@ -21,4 +12,8 @@ export function setCell(row, col) {
   model.setCell(row, col);
 }
 
-startController();
+// Startup code which is only run once - on page load
+console.log("Hello from controllers startup code");
+view.registerEventHandlers();
+view.clickedResetBoardButton();
+console.log("Goodbye from controllers startup code");
