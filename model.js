@@ -13,12 +13,11 @@ export function cols() {
 
 export function resetBoard(rows, cols) {
   console.log("From model: resetting board with rows", rows, "cols ", cols);
-  grid = new Grid(rows, cols);
-  grid.fill(false);
+  grid = new Grid(rows, cols, false);
   grid.printGrid();
 }
 
-export function setGrid(newGrid) {
+export function setBoard(newGrid) {
   grid = newGrid;
 }
 

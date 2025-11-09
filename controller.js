@@ -21,8 +21,7 @@ export async function startSimulation() {
   const cols = model.cols();
 
   while (true) {
-    const newGrid = new Grid(rows, cols);
-    newGrid.fill(false);
+    const newGrid = new Grid(rows, cols, false);
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
@@ -31,7 +30,7 @@ export async function startSimulation() {
       }
     }
 
-    model.setGrid(newGrid);
+    model.setBoard(newGrid);
     view.displayBoard(model.getBoard());
 
     await sleep(1000);
