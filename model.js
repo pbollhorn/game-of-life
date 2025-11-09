@@ -1,5 +1,6 @@
 import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.js";
 
+// Global variable to hold the grid
 let grid;
 
 export function resetBoard(rows, cols) {
