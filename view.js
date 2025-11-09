@@ -1,3 +1,5 @@
+import * as controller from "./controller.js";
+
 // Registers event handlers and creates board
 export function startView() {
   const resetButton = document.getElementById("resetButton");
@@ -21,7 +23,7 @@ function clickedBoard(event) {
   if (target.classList.contains("cell")) {
     const row = target.dataset.row;
     const col = target.dataset.col;
-    console.log("Clicked cell with row: ", row, "col: ", col);
+    controller.setCell(row, col);
   }
 }
 
@@ -50,14 +52,10 @@ function createCellElement(row, col) {
   return div;
 }
 
-
-
 // View skal have denne metode:
 
 // - `displayBoard()` - opdaterer det visuelle board så det matcher modellen.
 //     - oversæt 0, 1 og 2 i modellen til henholdsvis tomt felt, kryds, og bolle i viewet
 
 // Sørg for at displayBoard() bliver kaldt automatisk fra controlleren, når der sker ændringer på boardet.
-function displayBoard(){
-  
-}
+function displayBoard() {}
