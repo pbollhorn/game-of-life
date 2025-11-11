@@ -13,20 +13,23 @@ export function setCell(row, col) {
 }
 
 export async function runGame() {
-  const rows = model.rows();
-  const cols = model.cols();
+  // const rows = model.rows();
+  // const cols = model.cols();
 
   while (true) {
-    const newGrid = new Grid(rows, cols, false);
+    // const newGrid = new Grid(rows, cols, false);
 
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const cellLife = model.doesCellLive(row, col); // true or false
-        newGrid.set({ row, col }, cellLife);
-      }
-    }
+    // for (let row = 0; row < rows; row++) {
+    //   for (let col = 0; col < cols; col++) {
+    //     const cellLife = model.doesCellLive(row, col); // true or false
+    //     newGrid.set({ row, col }, cellLife);
+    //   }
+    // }
 
-    model.setBoard(newGrid);
+    // model.setBoard(newGrid);
+
+    model.nextGeneration();
+
     view.displayBoard(model.getBoard());
 
     await sleep(500);

@@ -44,3 +44,19 @@ export function doesCellLive(row, col) {
   if (liveNeighbourCount == 3) return true;
   if (liveNeighbourCount > 3) return false;
 }
+
+// Progress model to next generation
+export function nextGeneration() {
+  const newGrid = new Grid(grid.rows(), grid.cols(), false);
+  const rows = newGrid.rows();
+  const cols = newGrid.cols();
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      const cellLife = this.doesCellLive(row, col); // true or false
+      newGrid.set({ row, col }, cellLife);
+    }
+  }
+
+  this.setBoard(newGrid);
+}
