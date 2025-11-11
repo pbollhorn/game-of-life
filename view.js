@@ -36,6 +36,7 @@ export function clickedResetBoardButton() {
 function clickedRunGameButton() {
   rowsInput.disabled = true;
   colsInput.disabled = true;
+  resetBoardButton.disabled = true;
   controller.runGame();
 }
 
