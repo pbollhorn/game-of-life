@@ -16,7 +16,9 @@ export function setCell(row, col) {
 export function addRandomCells() {
   for (let row = 0; row < grid.rows(); row++) {
     for (let col = 0; col < grid.cols(); col++) {
-      const alive = Math.random() < 0.3; // 30% chance of being true, 70% chance of being false
+      const currentlyAlive = grid.get({ row, col });
+      const createNewAlive = Math.random() < 0.1; // 10% chance of being true, 90% chance of being false
+      const alive = currentlyAlive || createNewAlive;
       grid.set({ row, col }, alive);
     }
   }
