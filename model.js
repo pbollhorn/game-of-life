@@ -3,14 +3,6 @@ import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.j
 // Global variable to hold the grid
 let grid;
 
-export function rows() {
-  return grid.rows();
-}
-
-export function cols() {
-  return grid.cols();
-}
-
 export function resetBoard(rows, cols) {
   grid = new Grid(rows, cols, false);
 }
