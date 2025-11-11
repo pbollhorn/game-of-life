@@ -7,9 +7,9 @@ export function resetBoard(rows, cols) {
   grid = new Grid(rows, cols, false);
 }
 
-export function setBoard(newGrid) {
-  grid = newGrid;
-}
+// export function setBoard(newGrid) {
+//   grid = newGrid;
+// }
 
 export function setCell(row, col) {
   const value = grid.get({ row, col });
@@ -47,5 +47,5 @@ export function nextGeneration() {
     }
   }
 
-  this.setBoard(newGrid);
+  grid = newGrid;
 }
