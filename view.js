@@ -32,7 +32,7 @@ export function clickedResetBoardButton() {
   controller.resetBoard(rows, cols);
 }
 
-function clickedRunGameButton(){
+function clickedRunGameButton() {
   controller.runGame();
 }
 
@@ -70,6 +70,10 @@ export function displayBoard(grid) {
         cell.className = "cell empty";
         break;
     }
-
   }
+}
+
+export function displayGenerationNumber(generationNumber) {
+  const generationCounter = document.getElementById("generationCounter");
+  generationCounter.innerText = generationNumber;
 }

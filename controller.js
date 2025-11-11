@@ -15,6 +15,7 @@ export async function runGame() {
   while (true) {
     model.nextGeneration();
     view.displayBoard(model.getBoard());
+    view.displayGenerationNumber(model.getGenerationNumber());
     await sleep(500);
   }
 }

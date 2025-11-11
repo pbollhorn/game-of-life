@@ -1,15 +1,12 @@
 import Grid from "https://pbollhorn.github.io/datastruktur-portfolio/grid/grid.js";
 
-// Global variable to hold the grid
 let grid;
+let generationNumber;
 
 export function resetBoard(rows, cols) {
   grid = new Grid(rows, cols, false);
+  generationNumber = 0;
 }
-
-// export function setBoard(newGrid) {
-//   grid = newGrid;
-// }
 
 export function setCell(row, col) {
   const value = grid.get({ row, col });
@@ -18,6 +15,10 @@ export function setCell(row, col) {
 
 export function getBoard() {
   return grid;
+}
+
+export function getGenerationNumber() {
+  return generationNumber;
 }
 
 function countLiveNeighbours(row, col) {
@@ -48,4 +49,5 @@ export function nextGeneration() {
   }
 
   grid = newGrid;
+  generationNumber++;
 }
