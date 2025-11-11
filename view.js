@@ -4,6 +4,8 @@ const board = document.getElementById("board");
 const generationCounter = document.getElementById("generationCounter");
 const resetBoardButton = document.getElementById("resetBoardButton");
 const runGameButton = document.getElementById("runGameButton");
+const rowsInput = document.getElementById("rowsInput");
+const colsInput = document.getElementById("colsInput");
 
 export function registerEventHandlers() {
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
@@ -12,8 +14,8 @@ export function registerEventHandlers() {
 }
 
 export function clickedResetBoardButton() {
-  const rows = document.getElementById("rowsInput").value;
-  const cols = document.getElementById("colsInput").value;
+  const rows = rowsInput.value;
+  const cols = colsInput.value;
 
   // This removes all children from the board
   board.innerHTML = "";
@@ -32,6 +34,8 @@ export function clickedResetBoardButton() {
 }
 
 function clickedRunGameButton() {
+  rowsInput.disabled = true;
+  colsInput.disabled = true;
   controller.runGame();
 }
 
