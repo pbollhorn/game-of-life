@@ -13,6 +13,15 @@ export function setCell(row, col) {
   grid.set({ row, col }, !value);
 }
 
+export function addRandomCells() {
+  for (let row = 0; row < grid.rows(); row++) {
+    for (let col = 0; col < grid.cols(); col++) {
+      const alive = Math.random() < 0.3; // 30% chance of being true, 70% chance of being false
+      grid.set({ row, col }, alive);
+    }
+  }
+}
+
 export function getBoard() {
   return grid;
 }
