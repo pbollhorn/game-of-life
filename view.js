@@ -1,18 +1,17 @@
 import * as controller from "./controller.js";
 
+const board = document.getElementById("board");
+const generationCounter = document.getElementById("generationCounter");
+const resetBoardButton = document.getElementById("resetBoardButton");
+const runGameButton = document.getElementById("runGameButton");
+
 export function registerEventHandlers() {
-  const resetBoardButton = document.getElementById("resetBoardButton");
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
-
-  const runGameButton = document.getElementById("runGameButton");
   runGameButton.addEventListener("click", clickedRunGameButton);
-
-  const board = document.getElementById("board");
   board.addEventListener("click", clickedBoard);
 }
 
 export function clickedResetBoardButton() {
-  const board = document.getElementById("board");
   const rows = document.getElementById("rowsInput").value;
   const cols = document.getElementById("colsInput").value;
 
@@ -54,8 +53,6 @@ function clickedBoard(event) {
 }
 
 export function displayBoard(grid) {
-  const board = document.getElementById("board");
-
   // Loop over all children of the board (which are the cells)
   for (const cell of board.children) {
     const row = parseInt(cell.dataset.row);
@@ -74,6 +71,5 @@ export function displayBoard(grid) {
 }
 
 export function displayGenerationNumber(generationNumber) {
-  const generationCounter = document.getElementById("generationCounter");
   generationCounter.innerText = generationNumber;
 }
