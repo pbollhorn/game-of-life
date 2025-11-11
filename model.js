@@ -43,8 +43,8 @@ export function nextGeneration() {
 
   for (let row = 0; row < grid.rows(); row++) {
     for (let col = 0; col < grid.cols(); col++) {
-      const cellLife = this.doesCellLive(row, col); // true or false
-      newGrid.set({ row, col }, cellLife);
+      const alive = this.doesCellLive(row, col); // true or false
+      newGrid.set({ row, col }, alive);
     }
   }
 
