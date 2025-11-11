@@ -3,12 +3,14 @@ import * as controller from "./controller.js";
 const board = document.getElementById("board");
 const generationCounter = document.getElementById("generationCounter");
 const resetBoardButton = document.getElementById("resetBoardButton");
+const addRandomCellsButton = document.getElementById("addRandomCellsButton");
 const runGameButton = document.getElementById("runGameButton");
 const rowsInput = document.getElementById("rowsInput");
 const colsInput = document.getElementById("colsInput");
 
 export function registerEventHandlers() {
   resetBoardButton.addEventListener("click", clickedResetBoardButton);
+  addRandomCellsButton.addEventListener("click", clickedAddRandomCellsButton);
   runGameButton.addEventListener("click", clickedRunGameButton);
   board.addEventListener("click", clickedBoard);
 }
@@ -33,10 +35,15 @@ export function clickedResetBoardButton() {
   controller.resetBoard(rows, cols);
 }
 
+function clickedAddRandomCellsButton() {
+  controller.addRandomCells();
+}
+
 function clickedRunGameButton() {
   rowsInput.disabled = true;
   colsInput.disabled = true;
   resetBoardButton.disabled = true;
+  addRandomCellsButton.disabled = true;
   controller.runGame();
 }
 

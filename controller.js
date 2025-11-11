@@ -11,6 +11,11 @@ export function setCell(row, col) {
   view.displayBoard(grid);
 }
 
+export function addRandomCells() {
+  model.addRandomCells();
+  view.displayBoard(model.getBoard());
+}
+
 export async function runGame() {
   while (true) {
     model.nextGeneration();
